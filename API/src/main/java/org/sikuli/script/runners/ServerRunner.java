@@ -520,7 +520,7 @@ public class ServerRunner extends AbstractScriptRunner {
       }
 
       //TODO int retval = Runner.run(fScript.toString(), args);
-      int retval
+      int retval;
       try {
         retval = Runner.run(fScript.toString(), args, null);
       } catch (Exception ex) {
