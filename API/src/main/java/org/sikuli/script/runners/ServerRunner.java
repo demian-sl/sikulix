@@ -520,7 +520,13 @@ public class ServerRunner extends AbstractScriptRunner {
       }
 
       //TODO int retval = Runner.run(fScript.toString(), args);
-      int retval = Runner.run(fScript.toString(), args, null);
+      int retval
+      try {
+        retval = Runner.run(fScript.toString(), args, null);
+      } catch (Exception ex) {
+        rStatus = rStatusServiceNotAvail;
+        return false;
+      }
                   
       rMessage = "runScript: returned: " + retval;
            
