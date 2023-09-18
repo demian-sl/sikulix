@@ -92,7 +92,9 @@ public class ServerRunner extends AbstractScriptRunner {
         dolog(-1, "could not be started");
         return false;
       }
-      String theIP = InetAddress.getLocalHost().getHostAddress();
+      // String theIP = InetAddress.getLocalHost().getHostAddress();
+      String theIP = "0.0.0.0";
+      dolog(0, "IP = " + theIP);
       String theServer = String.format("%s %d", theIP, port);
       isRunning = new File(RunTime.get().fSikulixStore, "RunServer.txt");
       try {
